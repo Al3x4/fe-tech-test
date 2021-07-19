@@ -42,5 +42,6 @@ With more time the code would have better structure and documentation as well as
 
 - lazy loading throughout especially for images - currently only at page level using a very rudimentary `Skeleton` component and the `Suspense` api
 - tests implementation with `Jest`/`Enzyme` or `Cypress`
-  While responsive, the app isn't pixel perfect for all screen sizes.
-  Show pages cannot be accessed individually, only thought the modal, because they receive state through the `location` prop, but a different approach could be used to get page data directly from the API.
+
+  - While responsive, the app isn't pixel perfect for all screen sizes.
+  - Show pages cannot be accessed individually, only thought the modal, because they receive state through the `location` prop, but a different approach could be used to get page data directly from the API.
