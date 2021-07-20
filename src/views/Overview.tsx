@@ -23,19 +23,30 @@ const Overview: FC = () => {
         </h2>
         <div className='px-4 md:px-10 mx-auto w-full md:pt-24 pb-32 pt-8'>
           <div className='flex items-center justify-between flex-wrap'>
-            {data.slice(0, 3).map((datum: DatumI) => {
-              return (
-                <Card
-                  data={datum}
-                  handleClick={() =>
-                    setModal({
-                      visible: true,
-                      data: datum,
-                    })
-                  }
-                ></Card>
-              )
-            })}
+            {[...data]
+              .sort((a: DatumI, b: DatumI) => {
+                // sort by biggest growth
+                if (
+                  a.totalViews.total - a.prevTotalViews.total <
+                  b.totalViews.total - b.prevTotalViews.total
+                )
+                  return -1
+                return 1
+              })
+              .slice(0, 3)
+              .map((datum: DatumI) => {
+                return (
+                  <Card
+                    data={datum}
+                    handleClick={() =>
+                      setModal({
+                        visible: true,
+                        data: datum,
+                      })
+                    }
+                  ></Card>
+                )
+              })}
           </div>
         </div>
       </div>

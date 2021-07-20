@@ -177,13 +177,13 @@ const Event: FC<Props> = (props) => {
             <div className='w-full rounded-md shadow-md bg-white'>
               <div className=' flex items-center justify-between px-4 pt-4'>
                 <h3 className='text-lg font-bold text-blue-800'>Total views</h3>
-                <span className='text-lg font-bold text-blue-800'>
-                  {totalViews.total}
-                </span>
               </div>
 
               <hr className='mt-2 mb-3 w-full' />
-              <div className='p-4'>
+              <div className='p-4 relative flex items-center justify-around'>
+                <span className='absolute top-1/3 mt-3 text-lg font-bold text-blue-800'>
+                  {totalViews.total}
+                </span>
                 <Donut
                   data={formatDataForPieChart(props.data, 'totalViews')}
                   options={{
@@ -219,12 +219,12 @@ const Event: FC<Props> = (props) => {
                 <h3 className='text-lg font-bold text-blue-800'>
                   Previous views
                 </h3>
-                <span className='text-lg font-bold text-blue-800'>
-                  {prevTotalViews.total}
-                </span>
               </div>
               <hr className='mt-2 mb-3 w-full' />
-              <div className='p-4 '>
+              <div className='p-4 relative flex items-center justify-around'>
+                <span className='absolute top-1/3 mt-3 text-lg font-bold text-blue-800'>
+                  {prevTotalViews.total}
+                </span>
                 <Donut
                   data={formatDataForPieChart(props.data, 'prevTotalViews')}
                   options={{

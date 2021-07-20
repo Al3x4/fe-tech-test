@@ -42,14 +42,14 @@ const Card: FC<Props> = ({ data, handleClick }) => {
       }
     >
       <div className='w-full rounded flex flex-col lg:flex-row bg-white shadow-md my-14 '>
-        <div className='w-6/12 mx-auto lg:w-2/5 -mt-14 lg:ml-6 mb-6 rounded-md overflow-hidden shadow-md'>
+        <div className='w-6/12 h-56 lg:h-64 mx-auto lg:w-3/5 -mt-14 lg:ml-6 mb-6 rounded-md overflow-hidden shadow-md'>
           <img
             className='object-cover h-full w-full'
             src={videoImage}
             alt={name}
           />
         </div>
-        <div className='w-10/12 lg:w-2/3 mx-auto mb-4 lg:m-4 lg:mb-6'>
+        <div className='w-10/12 lg:w-2/3 mx-auto mb-4 lg:m-4 lg:mb-6 text-center md:text-left flex flex-col justify-between'>
           <h5 className='text-blueGray-400 uppercase font-bold text-md'>
             {name}
           </h5>

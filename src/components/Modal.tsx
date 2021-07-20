@@ -66,7 +66,7 @@ const Modal: FC<Props> = ({ data, setModal }) => {
     <>
       <div
         id='modal-parent'
-        className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'
+        className='justify-center items-center flex overflow-x-hidden overflow-y-scroll fixed inset-0 z-50 outline-none focus:outline-none'
         onClick={(e) => {
           if ((e.target as HTMLDivElement).id === 'modal-parent') {
             return setModal({
@@ -76,9 +76,9 @@ const Modal: FC<Props> = ({ data, setModal }) => {
           }
         }}
       >
-        <div className='relative w-auto my-6 mx-auto max-w-3xl px-6'>
+        <div className='relative my-6 mx-4 md:mx-auto max-w-3xl px-2'>
           {/*content*/}
-          <div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none mt-24'>
+          <div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full mx-auto bg-white outline-none focus:outline-none mt-48 md:mt-24'>
             <div className='w-full h-10 flex items-center justify-end p-1'>
               <NavLink
                 to={{
@@ -112,10 +112,20 @@ const Modal: FC<Props> = ({ data, setModal }) => {
             {/*body*/}
             <div className='relative p-6 flex flex-col md:flex-row'>
               <div className='w-6/12 md:w-1/3 rounded-md overflow-hidden -mt-24 shadow'>
-                <img src={videoImage} alt={name} />
+                <NavLink
+                  to={{
+                    pathname: `/content/${data.name
+                      .toLowerCase()
+                      .replace(/ /g, '-')
+                      .replace(/[^\w-]+/g, '')}`,
+                    state: data,
+                  }}
+                >
+                  <img src={videoImage} alt={name} />
+                </NavLink>
               </div>
 
-              <div className='mt-4 mx-4 w-full md:w-2/3 flex flex-col justify-between  flex-grow '>
+              <div className='mt-4 mx-4 w-11/12 md:w-2/3 flex flex-col justify-between  flex-grow '>
                 <div className='w-full flex items-top justify-between flex-grow'>
                   <div>
                     <h5 className='text-blueGray-800 uppercase font-bold text-4xl'>
@@ -129,7 +139,7 @@ const Modal: FC<Props> = ({ data, setModal }) => {
                     </div>
                   </div>
 
-                  <div className='text-blue-500 uppercase font-light text-5xl text-right '>
+                  <div className='text-blue-500 uppercase font-light text-3xl md:text-5xl text-right '>
                     <span className='block text-sm text-blueGray-400 font-bold px-1'>
                       Total views
                     </span>
@@ -168,12 +178,12 @@ const Modal: FC<Props> = ({ data, setModal }) => {
                 </div>
               </div>
             </div>
-            <p className='mb-6 mx-6 px-2 text-blueGray-500 text-md leading-relaxed border-l-8 border-blueGray-200'>
+            <p className='mb-6 mx-6 px-2 text-blueGray-500 text-xs md:text-base leading-relaxed border-l-8 border-blueGray-200'>
               {description}
             </p>
             <hr />
-            <div className='flex w-full items-center justify-around'>
-              <div className='w-1/3 px-6 py-6 text-blue-500 text-bold text-lg'>
+            <div className='flex flex-col md:flex-row w-full items-center justify-around'>
+              <div className='w-full md:w-1/3 px-6 py-6 text-blue-500 text-bold text-lg'>
                 Total views {totalViews.total}
                 <div className='w-36 h-20 md:w-40 overflow-hidden flex items-center justify-around mt-2'>
                   <Donut
@@ -189,7 +199,7 @@ const Modal: FC<Props> = ({ data, setModal }) => {
                   ></Donut>
                 </div>
               </div>
-              <div className='w-1/3 px-6 py-6 text-blue-500 text-bold text-lg'>
+              <div className='w-full md:w-1/3 px-6 py-6 text-blue-500 text-bold text-lg'>
                 Prev total {prevTotalViews.total}
                 <div className='w-36 h-20 md:w-40 overflow-hidden flex items-center justify-around mt-2'>
                   <Donut

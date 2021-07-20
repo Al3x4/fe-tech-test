@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom'
-
+import { Skeleton } from 'components'
 import './index.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -10,7 +10,7 @@ const App = lazy(() => import('./App'))
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={Skeleton}>
       <App />
     </Suspense>
   </React.StrictMode>,
