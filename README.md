@@ -23,7 +23,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## About this project
 
-This app queries data from two rest APIs and displays them in a friendly UI.
+This app queries data from two REST APIs and displays them in a friendly UI.
 
 An overview page shows top content and a table view of events.
 A content page shows all content in cards.
