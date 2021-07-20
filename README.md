@@ -32,7 +32,7 @@ Modals have the option to open in a shop page for the content - that's where the
 
 The app uses Typescript throughout. While this means some additional code is written, the app is more reliable and easier to refactor, and it comes with ootb documentation for components.
 SWR is used for data fetching. SWR is very clever to avoid unecessary UI rerenders, with build-in cache and request deduplication.
-For charting, this project was an opportunity to experiment with ChartJS, which uses html `canvas` instead of `svg` to enerate the charts.
+For charting, this project was an opportunity to experiment with ChartJS, which uses html `canvas` instead of `svg` to generate the charts.
 
 ## Improvements
 
