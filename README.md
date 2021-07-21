@@ -23,7 +23,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## About this project
 
-This app queries data from two rest APIs and displays them in a friendly UI.
+This app queries data from two REST APIs and displays them in a friendly UI.
 
 An overview page shows top content and a table view of events.
 A content page shows all content in cards.
@@ -32,7 +32,7 @@ Modals have the option to open in a shop page for the content - that's where the
 
 The app uses Typescript throughout. While this means some additional code is written, the app is more reliable and easier to refactor, and it comes with ootb documentation for components.
 SWR is used for data fetching. SWR is very clever to avoid unecessary UI rerenders, with build-in cache and request deduplication.
-For charting, this project was an opportunity to experiment with ChartJS, which uses html `canvas` instead of `svg` to enerate the charts.
+For charting, this project was an opportunity to experiment with ChartJS, which uses html `canvas` instead of `svg` to generate the charts.
 
 ## Improvements
 
